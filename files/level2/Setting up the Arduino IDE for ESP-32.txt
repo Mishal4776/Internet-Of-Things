@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Kerala-IoT-Challenge/assets/css/style.css?v=ef6823913306f6e4e9ef7c8d1bc51298c83b8456">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Setting up the Arduino IDE for ESP-32 | Kerala-IoT-Challenge</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Setting up the Arduino IDE for ESP-32" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://aswin-asokan.github.io/Kerala-IoT-Challenge/pages/level2/intro.html" />
+<meta property="og:url" content="https://aswin-asokan.github.io/Kerala-IoT-Challenge/pages/level2/intro.html" />
+<meta property="og:site_name" content="Kerala-IoT-Challenge" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Setting up the Arduino IDE for ESP-32" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Setting up the Arduino IDE for ESP-32","url":"https://aswin-asokan.github.io/Kerala-IoT-Challenge/pages/level2/intro.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/Kerala-IoT-Challenge/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/aswin-asokan/Kerala-IoT-Challenge">View on GitHub</a>
+          
+
+          <h1 id="project_title">Kerala-IoT-Challenge</h1>
+          <h2 id="project_tagline"></h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="setting-up-the-arduino-ide-for-esp-32">Setting up the Arduino IDE for ESP-32</h1>
+<h3 id="software-">Software :</h3>
+<p><em>We use Arduino IDE for writing,compiling and uploading the ESP-32 codes. You can download the latest IDE from <a href="https://www.arduino.cc/en/software">here</a> for linux,windows and mac.</em>
+<em>For more details about the IDE check <a href="https://aswin-asokan.github.io/Kerala-IoT-Challenge/pages/level1/intro">here</a></em></p>
+
+<h2 id="1-">1 :</h2>
+<p>After installing the Arduino IDE select <strong>File -&gt; Preferences</strong>. Paste the following link in <strong>Additional Boards Manager URLs</strong> field :</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+</code></pre></div></div>
+
+<p><img src="https://user-images.githubusercontent.com/86108610/165939342-f3b99319-665d-4914-9393-5fdb5893711c.png" alt="SS1" /></p>
+
+<h2 id="2-">2 :</h2>
+<p>Select <strong>Tools -&gt; Board -&gt; Boards Manager</strong>. Search for esp32 and install it.</p>
+
+<p><img src="https://user-images.githubusercontent.com/86108610/165940015-f4e8ce25-1608-4892-b829-f8432cad934b.png" alt="SS2" /></p>
+
+<p><em>For a more detailed installation process visit :</em> <strong><a href="https://github.com/espressif/arduino-esp32">Espressif</a></strong></p>
+
+<h2 id="3-">3 :</h2>
+<p>Now try uploading a simple code and make sure the ide is working fine with ESP-32.</p>
+
+<p><strong>Code:</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//code to blink an led
+#define LED 2
+void setup() {
+  pinMode(LED,OUTPUT);
+
+}
+
+void loop() {
+  digitalWrite(LED,HIGH);
+  delay(500);
+  digitalWrite(LED,LOW);
+  delay(500);
+}
+</code></pre></div></div>
+
+<p>If the code is uploaded without any issues the LED in the board will blink with 500ms time interval.</p>
+
+<p><strong>Video :</strong></p>
+
+<iframe width="352" height="240" src="https://user-images.githubusercontent.com/86108610/166152110-0a715cd6-ca80-4068-802a-7fd870b4e138.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<h2 id="notes-">Notes :</h2>
+
+<p>I faced some issues while uploading the code. If you are facing similar errors try the mentioned methods. Also I’m currently using Linux mint 20.3 and I guess the methods can be tried in any ubuntu distros.</p>
+
+<ul>
+  <li>
+    <p>Error 1 :</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"exec: "python": executable file not found in $PATH
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Type and run this in terminal :
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sudo apt install python-is-python3
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Error 2 :</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import serial ModuleNotFoundError: No module named 'serial' exit status 1 Error compiling for board ESP32 Dev Module.
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>Fix :</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  pip3 install pyserial
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Error 3 :</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Cannot open /dev/ttyUSB0: Permission denied
+</code></pre></div>    </div>
+
+    <ul>
+      <li>
+        <p>Fix :</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  sudo usermod -a -G dialout &lt;user_name&gt;
+  sudo chmod a+rw /dev/ttyUSB0
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>Sites :</p>
+    <ul>
+      <li><a href="https://stackoverflow.com/questions/60762378/exec-python-executable-file-not-found-in-path">Error 1</a></li>
+      <li><a href="https://forum.arduino.cc/t/modulenotfounderror-no-module-named-serial/847838/2">Error 2</a></li>
+      <li><a href="https://www.youtube.com/watch?v=mEptke-5rJc">Error 3</a></li>
+    </ul>
+  </li>
+</ul>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Kerala-IoT-Challenge maintained by <a href="https://github.com/aswin-asokan">aswin-asokan</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>

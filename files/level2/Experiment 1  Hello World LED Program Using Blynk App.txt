@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Kerala-IoT-Challenge/assets/css/style.css?v=ef6823913306f6e4e9ef7c8d1bc51298c83b8456">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Experiment 1 : Hello World LED Program Using Blynk App | Kerala-IoT-Challenge</title>
+<meta name="generator" content="Jekyll v3.9.2" />
+<meta property="og:title" content="Experiment 1 : Hello World LED Program Using Blynk App" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://aswin-asokan.github.io/Kerala-IoT-Challenge/pages/level2/EXP1.html" />
+<meta property="og:url" content="https://aswin-asokan.github.io/Kerala-IoT-Challenge/pages/level2/EXP1.html" />
+<meta property="og:site_name" content="Kerala-IoT-Challenge" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Experiment 1 : Hello World LED Program Using Blynk App" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Experiment 1 : Hello World LED Program Using Blynk App","url":"https://aswin-asokan.github.io/Kerala-IoT-Challenge/pages/level2/EXP1.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/Kerala-IoT-Challenge/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          
+            <a id="forkme_banner" href="https://github.com/aswin-asokan/Kerala-IoT-Challenge">View on GitHub</a>
+          
+
+          <h1 id="project_title">Kerala-IoT-Challenge</h1>
+          <h2 id="project_tagline"></h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2 id="experiment-1--hello-world-led-program-using-blynk-app">Experiment 1 : Hello World LED Program Using Blynk App</h2>
+<h3 id="description-">Description :</h3>
+<p>Blynk is a new platform that allows you to quickly build interfaces for controlling and monitoring your hardware projects from your iOS and Android device.Here we are using the Blynk app to control a LED connected to ESP-32 from our system and phone. <br />
+<strong>Follow this <a href="https://blynk.io/">link</a> and join Blynk and start off the experiment.</strong></p>
+<h3 id="contents-">Contents :</h3>
+<ol>
+  <li><a href="#components-used-">Components Used</a></li>
+  <li><a href="#step-1-">Step 1</a></li>
+  <li><a href="#step-2-">Step 2</a></li>
+  <li><a href="#step-3-">Step 3</a></li>
+  <li><a href="#circuit-diagram-">Circuit Diagram</a></li>
+  <li><a href="#working-">Working</a></li>
+</ol>
+
+<h3 id="components-used-">Components Used :</h3>
+<ul>
+  <li>ESP 32 board</li>
+  <li>LED x 1 Nos</li>
+  <li>Breadboard</li>
+  <li>Micro USB Cable</li>
+  <li>Breadboard jumper wires</li>
+</ul>
+
+<h3 id="step-1-">Step 1 :</h3>
+<p>After joining to blynk cloud you have to create a template for that follow the instructions.</p>
+<h4 id="1-">1 :</h4>
+<p><img src="https://user-images.githubusercontent.com/86108610/166209519-c4d53171-54c5-4a79-bd42-4dff8f9815af.png" alt="blynk1" /></p>
+<h4 id="2-">2 :</h4>
+<p><strong>Choose a name and create the template.</strong>  <br />
+<img src="https://user-images.githubusercontent.com/86108610/166209537-f63d9a79-fd03-46ce-aeb8-da0b711f5e2e.png" alt="blynk2" /></p>
+<h3 id="3-">3 :</h3>
+<ul>
+  <li><strong>Select datastream.</strong> <br />
+<img src="https://user-images.githubusercontent.com/86108610/166209562-0f002721-3a8a-4abd-ade1-cb8d3070ebb9.png" alt="blynk3" /></li>
+  <li><strong>Enter the details of datastream.</strong> <br />
+<img src="https://user-images.githubusercontent.com/86108610/166209574-cd155a25-5190-4225-a7c4-040d919e473d.png" alt="blynk4" />
+    <h3 id="4-">4 :</h3>
+  </li>
+  <li><strong>Now select web dashboard and add a switch to your dashboard.</strong> <br />
+<img src="https://user-images.githubusercontent.com/86108610/166209588-54a4ef7b-bf6e-4860-a85b-0e24088d93e1.png" alt="blynk5" /></li>
+  <li><strong>Select the settings of the switch and datastream to the one we have created.</strong>  <br />
+<img src="https://user-images.githubusercontent.com/86108610/166209695-d9a02194-11a9-429a-95c1-199024b78375.png" alt="blynk6" /></li>
+</ul>
+
+<h3 id="step-2-">Step 2 :</h3>
+<ul>
+  <li>
+    <p>Now to the coding part. For that first downlod blynk library <a href="https://github.com/blynkkk/blynk-library">Zip</a> and include it to the IDE by selecting <strong>Sketch -&gt; Include library -&gt; Add .ZIP library.</strong>
+<img src="https://user-images.githubusercontent.com/86108610/166210702-6fa02221-2c7e-4e47-b32a-4cce123645bd.png" alt="menu" /></p>
+  </li>
+  <li>
+    <p>Now add code from File -&gt; Example. <br />
+<img src="https://user-images.githubusercontent.com/86108610/166211097-77173cce-b2de-4780-9c97-0e6fbcd982bb.png" alt="menu2" /></p>
+  </li>
+  <li>
+    <p>In the code replace</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//#define BLYNK_TEMPLATE_ID           "TMPLxxxxxx"
+//#define BLYNK_DEVICE_NAME           "Device"
+</code></pre></div>    </div>
+    <p>With the template ID and device name given in blynk.
+<img src="https://user-images.githubusercontent.com/86108610/166211758-bdf6e90b-74b6-437d-98ad-ca86f3dcc0c3.png" alt="blynk7" /> <br />
+After enter the remaining code for blinking the LED :</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Fill-in information from your Blynk Template here
+#define BLYNK_TEMPLATE_ID "TMPLpc4K270H"
+#define BLYNK_DEVICE_NAME "LED Blink"
+
+#define BLYNK_FIRMWARE_VERSION        "0.1.0"
+
+#define BLYNK_PRINT Serial
+//#define BLYNK_DEBUG
+#define APP_DEBUG
+
+// Uncomment your board, or configure a custom board in Settings.h
+//#define USE_WROVER_BOARD
+//#define USE_TTGO_T7
+
+#include "BlynkEdgent.h"
+BLYNK_WRITE(V0)
+{
+  int pinValue = param.asInt();
+  digitalWrite(15,pinValue);
+}
+void setup()
+{
+  pinMode(15,OUTPUT);
+  Serial.begin(115200);
+  delay(100);
+
+  BlynkEdgent.begin();
+}
+void loop() {
+  BlynkEdgent.run();
+}
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="step-3-">Step 3 :</h3>
+<p>Now we are left off with configuring dashboard from our mobile. For that install <a href="https://play.google.com/store/apps/details?id=cloud.blynk&amp;hl=en_IN&amp;gl=US">Blynk IoT</a> app from playstore (as I’m using an android device).  <br />
+After installing the app login with the same profile created in the website.</p>
+<h4 id="1--1">1 :</h4>
+<ul>
+  <li>
+    <p>Click on <strong>Add New Device</strong> option in the.
+<img src="https://user-images.githubusercontent.com/86108610/166213391-26545333-bc8c-45d3-903a-32cb56445444.png" alt="blynk1" /></p>
+  </li>
+  <li>
+    <p>Select <strong>Connect to Wifi</strong>. <br />
+<img src="https://user-images.githubusercontent.com/86108610/166213510-063e5155-d91a-4e26-807f-9625df6adc8b.png" alt="blynk2" /></p>
+  </li>
+  <li>Connect to your ESP32 board.</li>
+  <li>
+    <p>Now setup the dashboard in your mobile. <br />
+<img src="https://user-images.githubusercontent.com/86108610/166214410-8d014a1d-b072-4318-8adb-4c012fdfeb90.png" alt="blynk3" /></p>
+  </li>
+  <li>
+    <p>Add a switch widget to your dashboard.  <br />
+<img src="https://user-images.githubusercontent.com/86108610/166214485-25e7c8e8-f31d-4371-bac8-5f7fefa1192d.png" alt="blynk4" /></p>
+  </li>
+  <li>
+    <p>In it’s settings select datastream to the one we created and configure it as you like. <br />
+<img src="https://user-images.githubusercontent.com/86108610/166214572-c7fcb64b-f170-47f8-9d14-b2c971ad8ecf.png" alt="blynk5" /></p>
+  </li>
+  <li>Now you can control the LED from you mobile or PC.
+    <ul>
+      <li>
+        <p>Mobile : <br />
+<img src="https://user-images.githubusercontent.com/86108610/166214677-74b861c4-8f74-4e1a-8d34-5cf0f3886615.png" alt="blynk6" /></p>
+      </li>
+      <li>
+        <p>PC : <br />
+<img src="https://user-images.githubusercontent.com/86108610/166214929-8a8673b9-8351-4c07-a860-473377774f19.png" alt="blynk7 (1)" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="circuit-diagram-">Circuit Diagram :</h3>
+<p><img src="https://user-images.githubusercontent.com/86108610/166215807-3952edeb-699e-468e-95e7-5cda239d7116.png" alt="EXP1" /></p>
+
+<h3 id="working-">Working :</h3>
+<iframe width="352" height="240" src="https://user-images.githubusercontent.com/86108610/166216112-77bb8d51-90d5-44a8-9c9b-54ad4d845647.mp4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p><em>For a detailed instruction you can see this <a href="https://www.youtube.com/watch?v=IKbbvEzZ7wg">video</a></em></p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Kerala-IoT-Challenge maintained by <a href="https://github.com/aswin-asokan">aswin-asokan</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
